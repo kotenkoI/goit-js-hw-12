@@ -5,7 +5,7 @@ import SimpleLightbox from 'simplelightbox'; // Описаний у докуме
 import 'simplelightbox/dist/simple-lightbox.min.css'; // Додатковий імпорт стилів
 
 import { getImages } from './js/pixabay-api';
-import { renderGallery } from './js/render-function';
+import { renderGallery } from './js/render-functions';
 
 export const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
