@@ -54,6 +54,7 @@ async function onFormSubmit(e) {
     console.log(data);
     if (data.hits.length === 0) {
       deleteLoader();
+      hideLoadMore();
       iziToast.error({
         message:
           'Sorry, there are no images matching your search query. Please try again!',
@@ -65,9 +66,11 @@ async function onFormSubmit(e) {
     renderGallery(data.hits);
   } catch (err) {
     console.log(err);
+    deleteLoader();
+  hideLoadMore();
   }
 
-  deleteLoader();
+  
   checkBtnStatus();
   refs.formEl.reset();
 }
@@ -80,11 +83,12 @@ async function onLoadMoreClick() {
     renderGallery(data.hits);
   } catch (err) {
     console.log(err);
+    deleteLoader();
   }
 
   myScroll();
   checkBtnStatus();
-  deleteLoader();
+  hideLoadMore();
 }
 
 function showLoadMore() {
