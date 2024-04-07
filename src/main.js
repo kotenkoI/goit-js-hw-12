@@ -103,9 +103,10 @@ function checkBtnStatus() {
       message: "We're sorry, but you've reached the end of search results.",
       position: 'topRight',
     });
-  } else {
-    showLoadMore();
   }
+  // else {
+  //   showLoadMore();
+  // }
 }
 
 function deleteLoader() {
