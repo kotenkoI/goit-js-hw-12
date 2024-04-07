@@ -104,9 +104,9 @@ function checkBtnStatus() {
       position: 'topRight',
     });
   }
-  // else {
-  //   showLoadMore();
-  // }
+  else {
+    showLoadMore();
+  }
 }
 
 function deleteLoader() {
