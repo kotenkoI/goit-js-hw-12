@@ -34,7 +34,7 @@ hideLoadMore();
 async function onFormSubmit(e) {
   e.preventDefault();
   createLoader();
-
+  hideLoadMore();
   searchQuery = e.target.elements.request.value.trim();
   refs.gallery.innerHTML = '';
   currentPage = 1;
