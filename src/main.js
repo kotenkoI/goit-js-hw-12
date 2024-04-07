@@ -52,9 +52,12 @@ async function onFormSubmit(e) {
   try {
     const data = await getImages(searchQuery, currentPage);
     console.log(data);
+    console.log("Number of hits:", data.hits.length);
+    console.log("Current Page:", currentPage);
+    console.log("Per Page:", perPage);
     if (data.hits.length === 0) {
-      deleteLoader();
-      hideLoadMore();
+      // deleteLoader();
+      // hideLoadMore();
       iziToast.error({
         message:
           'Sorry, there are no images matching your search query. Please try again!',
@@ -63,6 +66,10 @@ async function onFormSubmit(e) {
       return;
     }
     maxPage = Math.ceil(data.totalHits / perPage);
+     if (data.hits.length < perPage) {
+      console.log(data.hits.length )
+      console.log(perPage)
+      console.log(data.hits.length < perPage)
     renderGallery(data.hits);
     showLoadMore();
   } catch (err) {
@@ -73,7 +80,14 @@ async function onFormSubmit(e) {
   // checkBtnStatus();
   refs.formEl.reset();
 }
-
+if (data.hits.length < perPage) {
+      console.log(data.hits.length )
+      console.log(perPage)
+      console.log(data.hits.length < perPage)
+      renderGallery(data.hits);
+      hideLoadMore();
+      return
+    }
 async function onLoadMoreClick() {
   currentPage += 1;
   createLoader();
