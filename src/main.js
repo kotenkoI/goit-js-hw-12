@@ -98,7 +98,7 @@ function hideLoadMore() {
 
 function checkBtnStatus() {
   if (currentPage >= maxPage) {
-    hideLoadMore();
+    // hideLoadMore();
     iziToast.error({
       message: "We're sorry, but you've reached the end of search results.",
       position: 'topRight',
