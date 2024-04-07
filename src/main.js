@@ -64,12 +64,13 @@ async function onFormSubmit(e) {
     }
     maxPage = Math.ceil(data.totalHits / perPage);
     renderGallery(data.hits);
+    showLoadMore();
   } catch (err) {
     console.log(err);
   }
 
   deleteLoader();
-  checkBtnStatus();
+  // checkBtnStatus();
   refs.formEl.reset();
 }
 
