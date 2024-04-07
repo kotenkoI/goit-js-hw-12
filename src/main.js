@@ -62,6 +62,7 @@ async function onFormSubmit(e) {
       console.log(data.hits.length < perPage)
       renderGallery(data.hits);
       hideLoadMore();
+      deleteLoader()
       return
     }
     renderGallery(data.hits);
