@@ -53,8 +53,8 @@ async function onFormSubmit(e) {
     const data = await getImages(searchQuery, currentPage);
     console.log(data);
     if (data.hits.length === 0) {
-      deleteLoader();
-      hideLoadMore();
+      // deleteLoader();
+      // hideLoadMore();
       iziToast.error({
         message:
           'Sorry, there are no images matching your search query. Please try again!',
