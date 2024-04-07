@@ -54,6 +54,7 @@ async function onFormSubmit(e) {
     console.log(data);
     if (data.hits.length === 0) {
       deleteLoader();
+      hideLoadMore();
       iziToast.error({
         message:
           'Sorry, there are no images matching your search query. Please try again!',
@@ -118,7 +119,7 @@ function myScroll() {
   const height = refs.gallery.firstChild.getBoundingClientRect().height;
 
   scrollBy({
-    top: height,
+    top: height * 2,
     behavior: 'smooth',
   });
 }
